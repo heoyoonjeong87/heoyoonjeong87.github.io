@@ -1,0 +1,446 @@
+
+*{box-sizing: border-box;}
+
+a:link {color: #333;}
+a {color: #333;}
+
+body{
+    color: #333;
+}
+
+
+header {
+    height: 100vh;
+    display: inline-block;
+    position: fixed;
+    box-shadow: 0 2px 3px 1px grey;
+    width: 200px;
+    z-index: 100;
+}
+
+header .title {
+    background-color: #fafafa;
+    position: relative;
+    top:0px;
+    border-bottom: 1px solid gray;
+}
+
+header .title > a.home {
+    display: block;
+    padding: 25px;
+}
+header .title  h1{
+     color: #57aba2;
+     font-size: 1.2rem;
+     font-weight: 100;
+}
+
+header .title span{
+    color: gray;
+    font-size: 0.8rem;
+
+}
+header .btn_menu_mobile {
+    display: none;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    color: #57aba2;
+}
+
+nav {
+    background-color: white;
+}
+nav ul li {
+    padding: 15px;
+    color : #333;
+    font-weight : 100;
+}
+
+nav > ul > li > a > span {
+    margin-right : 10px;
+
+}
+nav > ul > li.on {
+    background-color: lightgray;
+    font-weight: bold;
+}
+
+nav > ul > li.btn_about > a > span {
+    color: #57aba2;
+}
+nav > ul > li.btn_projects > a > span {
+    color: #00bcd4;
+}
+nav > ul > li.btn_portfolio > a > span {
+    color: #3f51b5;
+}nav > ul > li.btn_skills > a > span {
+    color: #9c27b0;
+}nav > ul > li.btn_contact > a > span {
+    color: #ff9800;
+}nav > ul > li.btn_resume > a > span {
+    color: #424242;
+}
+
+.container {
+    margin-left: 200px;
+    background : url(../images/bg.png) repeat;
+    overflow: hidden;
+}
+
+#intro{
+    position: relative;
+}
+#intro .main_img{
+    background: url(../images/20180404_163236.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    filter : brightness(0.8);
+}
+
+#intro h2{
+    color: white;
+    top: 100px;
+    position: absolute;
+    font-size: 3rem;
+    left: 100px;
+}
+.section_title {
+    background-color:#57aba2;
+    padding: 20px;
+    color: white;
+    font-size: 2rem;
+}
+.text_area {
+    width: 95%;
+    margin : 0 auto;
+    max-width: 1280px;
+}
+
+
+#about h3{
+    margin: 20px;
+    color: #333;
+    font-size : 2rem;
+    color : brown;
+}
+
+#about p{
+    margin: 20px;
+    font-size: 1.6rem;
+}
+.contents{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+
+#portfolio ul.thumbnail_list {
+    display: flex;
+}
+#portfolio ul.thumbnail_list > li{
+    flex-grow: 1; 
+    border: 1px solid black; 
+    margin: 50px 10px;
+}
+#portfolio ul.thumbnail_list > li .card_wrap{
+    background-color: white; 
+    height: 380px; 
+    position: relative;
+}
+#portfolio ul.thumbnail_list > li .card_wrap > a.card_link{
+    display: block;
+}
+#portfolio ul.thumbnail_list > li .slide_detail{
+    position:absolute;
+    padding : 40px 20px 80px 20px;
+    background-color: #fff;
+    opacity : 0;
+    height: 380px;
+    transition: all 0.3s ease;
+    width: 100%;
+    top: 0;
+    visibility : hidden;
+}
+#portfolio ul.thumbnail_list > li .slide_detail.on{
+    opacity: 1;
+    visibility : visible;
+}
+#portfolio ul.thumbnail_list > li .slide_detail .txt_wrap2{
+    padding: 20px;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-top : 1px solid gray;
+}
+#portfolio ul.thumbnail_list > li .slide_detail > .title{
+    color: #795548;
+    font-size: 24px;
+}
+#portfolio ul.thumbnail_list > li .slide_detail > ul{
+    list-style :disc !important;
+    margin: 20px 0 0 20px;
+    font-size: 1px;
+}
+
+#portfolio ul.thumbnail_list > li .slide_detail > ul >li{
+    list-style :disc !important;
+    font-size: 1rem;
+    line-height : 2;
+}
+
+.btn_rnd{
+    background-color: #795548;
+    padding: 12px 10px 10px 12px;
+    border-radius: 50%;
+    width: 45px;
+    display: inline-block;
+    height: 45px;
+    overflow: hidden;
+    color: #fff !important;
+    margin-right: 15px;
+}
+
+.btn_rnd.on{
+    box-shadow: 0 2px 8px 1px grey;
+}
+.close {position: absolute; right: 10px; top: 10px; padding: 10px;}
+
+#portfolio ul.thumbnail_list > li .title {color: #57aba2; font-size: 1.5rem;}
+
+#portfolio ul.thumbnail_list > li .img_wrap {
+    padding-top: 240px;
+}
+
+#portfolio ul.thumbnail_list > li .img_wrap.kabang {
+    background: url('../images/portfolio_kakaobank.png') no-repeat;
+    background-size: cover;
+}
+
+#portfolio ul.thumbnail_list > li .img_wrap.ec {
+    background: url('../images/portfolio_eyescream.png') no-repeat;
+    background-size: cover;
+
+}
+#portfolio ul.thumbnail_list > li .img_wrap.ms {
+    background: url('../images/portfolio_ms.png') no-repeat;
+    background-size: cover;
+
+}
+
+#portfolio ul.thumbnail_list > li img{
+    width: 100%;
+}
+#portfolio ul.thumbnail_list > li .txt_wrap {
+    padding: 20px; 
+    height: 140px;
+}
+#portfolio ul.thumbnail_list > li .txt_wrap i{
+    float : right;
+}
+#portfolio ul.thumbnail_list > li .txt_wrap p{
+    margin-top: 20px;
+}
+
+
+#projects .content{
+    background-color: #fff;
+    box-shadow: 0 2px 3px 1px grey;
+    margin-top: 50px;
+}
+
+#projects .content:last-child{
+    margin-bottom: 100px;
+
+}
+
+#projects .content .title{
+    padding: 20px 0;
+    border-bottom: 1px solid gray;
+    margin: 0 20px;
+}
+#projects .content .title h3{
+    font-size: 1.5rem;
+    color: lightslategray;
+    display: inline;
+}
+#projects .content .title > .date{
+    font-size: 0.9rem;
+    color: #57aba2;
+    float: right;
+}
+#projects .content .summary{
+    font-size: 1rem;
+    padding: 20px 0;
+    margin: 0 20px;
+    line-height: 2;
+
+}
+#projects .content .summary span{
+    display: block;
+}
+#projects .content .summary ul{
+    margin-left: 30px;
+    list-style : disc !important;
+}
+
+#projects .content .summary ul > li{
+    list-style : disc !important;
+}
+
+#skills .content{
+    background-color: #fff;
+    box-shadow: 0 2px 3px 1px grey;
+    margin-top: 50px;
+}
+
+#skills .content:last-child{
+    margin-bottom: 100px;
+
+}
+#skills .content .title{
+    padding: 20px 0;
+    border-bottom: 1px solid gray;
+    margin: 0 20px;
+}
+#skills .content .title h3{
+    font-size: 1.5rem;
+    color: lightslategray;
+    display: inline;
+}
+
+#skills .content .summary{
+    padding: 0px 20px 20px 20px;
+}
+
+#skills .content .summary > ul > li {
+    display: inline-block;
+    margin : 50px 20px 10px 20px;
+}
+
+#skills .content .summary > ul > li img {
+    width: 100px;
+    height: 100px;
+}
+
+#skills .content .summary ul li span{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size : 1.3rem;
+}
+
+.ico_btn {
+    background-color: #ff9800;
+    padding: 10px 15px 15px 10px;
+    display: inline-block;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+}
+
+.ico_txt {
+    
+    line-height: 50px;
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 10px;
+    color: #000;
+
+}
+
+#contact .content {
+    margin: 50px 0;
+}
+#contact .content > ul > li {
+    margin-top: 30px;
+}
+
+
+.filter.on{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 299;
+    background: rgba(0,0,0,0.6);
+    /* transition: display 1s ease; */
+}
+@media screen and (max-width: 994px) {
+    header .title {
+        background-color: #fafafa;
+        position: fixed;
+        top:0px;
+        left: 0;
+        right: 0;
+        border-bottom: 1px solid gray;
+        text-align: center;
+        z-index: 200;
+        height: 60px;
+    }
+
+    /* header .title.filter {
+        filter : brightness(0.5);
+    } */
+
+    header .title > a.home {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    header .btn_menu_mobile{
+        display: block;
+        z-index: 201;
+    }
+
+    header {
+        height: 0;
+        display: inline-block;
+        position: static;
+        box-shadow: initial;
+        width: 0;
+        z-index: 100;
+    }
+
+    nav {
+        position: fixed;
+        left: -200px;
+        top: 0;
+        z-index: 300;
+        width: 200px;
+        bottom: 0;
+        transition: left 0.5s ease;
+    }
+
+    nav.on {
+        left: 0;
+        transition: left 0.5s ease;
+    }
+
+    .container{
+        margin-left: 0px;
+        margin-top : 42px;
+    }
+
+
+
+    #portfolio ul.thumbnail_list {display: block;}
+    #portfolio ul.thumbnail_list > li{display : inline-block; width:47% ;border: 1px solid black; margin: 1% 1%;}
+    #portfolio ul.thumbnail_list > li .card_wrap{background-color: white; height: 380px;}
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        min-width : 400px;
+    }
+    #portfolio ul.thumbnail_list > li{display : inline-block; width:100% ;border: 1px solid black; margin: 50px 10px;}
+}
