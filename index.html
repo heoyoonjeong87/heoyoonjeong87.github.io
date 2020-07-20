@@ -7,12 +7,11 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/common.css">
-    <link rel="stylesheet" type="text/css" href="script/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="script/slick/slick-theme.css"/>
 
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <script src="https://kit.fontawesome.com/e545ec33c1.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
     <script>
         $(document).ready(function(){
             
@@ -41,6 +40,8 @@
         });
 
         $(".btn").click(function(e){
+            console.log($(this));
+            console.log("btn");
             e.preventDefault();
             var href = $(this).children('a').attr('href');            //자식위치가져오기
             var offset  = $(href).offset().top;
@@ -71,33 +72,19 @@
         {
             var result = false;
             var docViewTop = $(window).scrollTop(); //현재스크롤위치
-            var docViewBottom = docViewTop + $(window).height(); //+ 브라우저에서보여지는높이
+            var docViewBottom = docViewTop + $(window).height(); //+ 브라우저에서보여지는높이 //1528
 
-            var elemTop = $(elem).offset().top; //elm의 좌표값의 top
-            var elemBottom = elemTop + $(elem).height(); //elm의 top에 elm의 높이더하면 elm의 bottom
+            var elemTop = $(elem).offset().top; //elm의 좌표값의 top 588    
+            var elemBottom = elemTop + $(elem).height(); //elm의 top에 elm의 높이더하면 elm의 bottom 1458
 
-            if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)){ //elm이 화면안에 있는지 쳌
+            if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)){ //elm이 화면안에 있는지 쳌 588 > 600
+            console.log("elemBottom = "+elemBottom+",<= docViewBottom = "+docViewBottom +", elemTop : "+elemTop+">= docViewTop : "+docViewTop);
                 result =  true;
             }
             return result;
         }
 
         function detectContent(){
-
-            // if (isScrolledIntoView($('#skills'))) {
-            //     $(".btn_skills").addClass("on");
-            //     $(".btn_skills").siblings('li').removeClass("on");
-            // }else if (isScrolledIntoView($('#portfolio'))) {
-            //     $(".btn_portfolio").addClass("on");
-            //     $(".btn_portfolio").siblings('li').removeClass("on");
-            // } else if (isScrolledIntoView($('#projects'))) {
-            //     $(".btn_projects").addClass("on");
-            //     $(".btn_projects").siblings('li').removeClass("on");
-            // } else if (isScrolledIntoView($('#contact'))) {
-            //     $(".btn_contact").addClass("on");
-            //     $(".btn_contact").siblings('li').removeClass("on");
-            // } 
-
             if (isScrolledIntoView($('#skills > .section_title'))) {
                 console.log("skill");
                 $(".btn_skills").addClass("on");
@@ -107,14 +94,18 @@
                 $(".btn_portfolio").addClass("on");
                 $(".btn_portfolio").siblings('li').removeClass("on");
             } else if (isScrolledIntoView($('#projects > .section_title'))) {
+                console.log("projects");
+
                 $(".btn_projects").addClass("on");
                 $(".btn_projects").siblings('li').removeClass("on");
             } else if (isScrolledIntoView($('#contact > .section_title'))) {
+                console.log("contact");
+
                 $(".btn_contact").addClass("on");
                 $(".btn_contact").siblings('li').removeClass("on");
             } 
-            else {
-                //$(".btn").removeClass("on");
+            else if (!$(window).scrollTop()){
+                    $(".btn").removeClass("on");
             }
         }
     
@@ -126,9 +117,9 @@
     <div id="wrap">
     <div class="filter"></div>
     <header>
-        <div class="title btn">
-            <a href="#home" id ="home" class="home" >
-                <h1>HEO YOONJEONGkll</h1>
+        <div class="title">
+            <a href="#home" id ="home" class="home btn" >
+                <h1>HEO YOONJEONG</h1>
                 <span>JUST A DEVELOPER</span>
             </a>
 
@@ -138,12 +129,12 @@
 
         <nav>
             <ul>
-                <li class="btn_about btn"><a href="javascript:;"><span><i class="fas fa-user"></i></span>About</a></li>
+                <!-- <li class="btn_about "><a href="javascript:;"><span><i class="fas fa-user"></i></span>About</a></li> -->
                 <li class="btn_portfolio btn"><a href="#portfolio"><span><i class="far fa-window-restore"></i></span>Portfolio</a></li>
                 <li class="btn_projects btn"><a href="#projects"><span><i class="fas fa-chart-line"></i></span>Projects</a></li>
                 <li class="btn_skills btn"><a href="#skills"><span><i class="fas fa-chart-bar"></i></span>Skills</a></li>
                 <li class="btn_contact btn"><a href="#contact"><span><i class="fas fa-envelope"></i></span>Contact</a></li>
-                <li class="btn_resume btn"><a href="#"><span><i class="fas fa-sticky-note"></i></span>Resume</a></li>
+                <li class="btn_resume "><a href="#"><span><i class="fas fa-sticky-note"></i></span>Resume</a></li>
             </ul>
         </nav>
     </header>
@@ -175,7 +166,7 @@
                                 </div>
                                 <div class="txt_wrap">
                                     <span class="title">카카오뱅크<i class="fas fa-ellipsis-h"></i> </span>
-                                    <p>HTML5, CSS3, JAVASCRIPT 를 이용하여 구현한 카카오뱅크 Clone 사이트</p>
+                                    <!-- <p>HTML5, CSS3, JAVASCRIPT 를 이용하여 구현한 카카오뱅크 Clone 사이트</p> -->
                                 </div>
                             </a>
                             <div class="slide_detail">
@@ -183,12 +174,12 @@
                                 <span class="title">구현상세</span>
                                 <ul>
                                     <li>적응형 웹</li>
-                                    <li>사용 언어 : HTML5, CSS3, JQUERY </li>
+                                    <li>사용 언어 : HTML5, CSS3, JQUERY</li>
                                     <li>플러그인 : slick, kakaoMap</li>
                                     <li>구현 화면 : 메인, 회사소개, 입출금대출</li>
                                 </ul>
                                 <div class="txt_wrap2">
-                                    <a href="newkakao/" target="_blank" class="btn_rnd"><i class="fas fa-external-link-alt fa-lg"></i></a>
+                                    <a href="http://192.168.2.68/private_repo/portfolio/newkakao/" target="_blank" class="btn_rnd"><i class="fas fa-external-link-alt fa-lg"></i></a>
                                     <a href="https://github.com/heoyoonjeong87/private_repo/tree/master/portfolio/newkakao" target="_blank" class="btn_rnd"><i class="fab fa-github fa-lg"></i></a>
                                 </div>
                             </div>
@@ -201,7 +192,7 @@
                                 </div>
                                 <div class="txt_wrap">
                                     <span class="title">Microsoft<i class="fas fa-ellipsis-h"></i></span>
-                                    <p>HTML5, CSS3, JAVASCRIPT 를 이용하여 구현한 MicroSoft Clone 사이트</p>
+                                    <!-- <p>HTML5, CSS3, JAVASCRIPT 를 이용하여 구현한 MicroSoft Clone 사이트</p> -->
                                 </div>
                             </a>
                             <div class="slide_detail">
@@ -210,12 +201,12 @@
                                 <ul>
                                     <li>반응형 웹</li>
                                     <li>사용 언어 : HTML5, CSS3, JQUERY </li>
-                                    <li>플러그인 : slick</li>
+                                    <li>플러그인 : slick </li>
                                     <li>구현 화면 : 메인, Microsoft365</li>
                                 </ul>
                                 <div class="txt_wrap2">
-                                    <a href="ms/" target="_blank" class="btn_rnd"><i class="fas fa-external-link-alt fa-lg"></i></a>
-                                    <a href="https://github.com/heoyoonjeong87/private_repo/tree/master/portfolio/ms" target="_blank" class="btn_rnd"><i class="fab fa-github fa-lg"></i></a>
+                                    <a href="http://192.168.2.68/private_repo/portfolio/eyescream/" target="_blank" class="btn_rnd"><i class="fas fa-external-link-alt fa-lg"></i></a>
+                                    <a href="https://github.com/heoyoonjeong87/private_repo/tree/master/portfolio/eyescream" target="_blank" class="btn_rnd"><i class="fab fa-github fa-lg"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -227,7 +218,7 @@
                                 </div>
                                 <div class="txt_wrap">
                                     <span class="title">EYESCREAM<i class="fas fa-ellipsis-h"></i></span>
-                                    <p>HTML5, CSS3, JAVASCRIPT 를 이용하여 구현한 EYESCREAM Clone 사이트</p>
+                                    <!-- <p>HTML5, CSS3, JAVASCRIPT 를 이용하여 구현한 EYESCREAM Clone 사이트</p> -->
                                 </div>
                             </a>
                             <div class="slide_detail">
@@ -240,8 +231,8 @@
                                     <li>구현 화면 : 메인</li>
                                 </ul>
                                 <div class="txt_wrap2">
-                                    <a href="eyescream/" target="_blank" class="btn_rnd"><i class="fas fa-external-link-alt fa-lg"></i></a>
-                                    <a href="https://github.com/heoyoonjeong87/private_repo/tree/master/portfolio/eyescream" target="_blank" class="btn_rnd"><i class="fab fa-github fa-lg"></i></a>
+                                    <a href="http://192.168.2.68/private_repo/portfolio/ms/" target="_blank" class="btn_rnd"><i class="fas fa-external-link-alt fa-lg"></i></a>
+                                    <a href="https://github.com/heoyoonjeong87/private_repo/tree/master/portfolio/ms" target="_blank" class="btn_rnd"><i class="fab fa-github fa-lg"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -266,9 +257,9 @@
                     <span class="mt20">ROLE</span>
                     <ul>
                         <li>AS-IS OTV HDS, OTM ONM 프로그램 분석</li>
-                        <li>개발환경 로컬 구축 및 공통 로직 개발 (공통예외, 로그인 등)</li>
                         <li>TO-BE 통합 ONM 프로그램 설계 (프로그램 목록 작성, UML 작성)</li>
-                        <li>프로그램 기능 개발 / 프로그램 통합 테스트 / 보완사용자매뉴얼 작성</li>
+                        <li>개발환경 로컬 구축 및 공통 로직 개발 (공통예외, 로그인 등)</li>
+                        <li>프로그램 기능 개발 / 프로그램 통합 테스트 / 사용자매뉴얼 작성</li>
                     </ul>
                     <span class="mt20">SKILLS</span>
                     <ul>
@@ -281,12 +272,12 @@
 
             <div class="content">
                 <div class="title">
-                    <h3>kt ITO 고객 Portal SM 개발</h3> <span class="date">2014.11.15 ~ 2018.10.31</span>
+                    <h3>KT ITO 고객 Portal SM 개발</h3> <span class="date">2014.11.15 ~ 2018.10.31</span>
                 </div>
                 <div class="summary">
                     <span>ROLE</span>
                     <ul>
-                        <li>AP UI / 비즈니스 로직 개발 및 수정</li>
+                        <li>마이케이티, 멤버십, 비즈멤버십, 중소사업자, 고객지원 AP UI / business 로직 개발 및 수정</li>
                         <li>SOAP 웹 서비스 클라이언트 신규 및 변경 연동 개발</li>
                         <li>CMS WEB 개발</li>
                     </ul>

@@ -104,6 +104,7 @@ nav > ul > li.btn_portfolio > a > span {
     position: absolute;
     font-size: 3rem;
     left: 100px;
+
 }
 .section_title {
     background-color:#57aba2;
@@ -146,7 +147,7 @@ nav > ul > li.btn_portfolio > a > span {
 }
 #portfolio ul.thumbnail_list > li .card_wrap{
     background-color: white; 
-    height: 380px; 
+    height: 300px; 
     position: relative;
 }
 #portfolio ul.thumbnail_list > li .card_wrap > a.card_link{
@@ -154,10 +155,10 @@ nav > ul > li.btn_portfolio > a > span {
 }
 #portfolio ul.thumbnail_list > li .slide_detail{
     position:absolute;
-    padding : 40px 20px 80px 20px;
+    padding : 20px 20px 60px 20px;
     background-color: #fff;
     opacity : 0;
-    height: 380px;
+    height: 300px;
     transition: all 0.3s ease;
     width: 100%;
     top: 0;
@@ -168,8 +169,8 @@ nav > ul > li.btn_portfolio > a > span {
     visibility : visible;
 }
 #portfolio ul.thumbnail_list > li .slide_detail .txt_wrap2{
-    padding: 20px;
-    height: 80px;
+    padding: 10px;
+    height: 60px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -179,11 +180,11 @@ nav > ul > li.btn_portfolio > a > span {
 }
 #portfolio ul.thumbnail_list > li .slide_detail > .title{
     color: #795548;
-    font-size: 24px;
+    font-size: 1.2rem;
 }
 #portfolio ul.thumbnail_list > li .slide_detail > ul{
     list-style :disc !important;
-    margin: 20px 0 0 20px;
+    margin: 10px 0 0 20px;
     font-size: 1px;
 }
 
@@ -195,11 +196,11 @@ nav > ul > li.btn_portfolio > a > span {
 
 .btn_rnd{
     background-color: #795548;
-    padding: 12px 10px 10px 12px;
-    border-radius: 50%;
-    width: 45px;
+    padding : 12px 10px 10px 10px;
+        border-radius: 50%;
+    width: 40px;
     display: inline-block;
-    height: 45px;
+    height: 40px;
     overflow: hidden;
     color: #fff !important;
     margin-right: 15px;
@@ -210,7 +211,7 @@ nav > ul > li.btn_portfolio > a > span {
 }
 .close {position: absolute; right: 10px; top: 10px; padding: 10px;}
 
-#portfolio ul.thumbnail_list > li .title {color: #57aba2; font-size: 1.5rem;}
+#portfolio ul.thumbnail_list > li .title {color: #57aba2; font-size: 1.2rem;line-height: 45px;display: inline;}
 
 #portfolio ul.thumbnail_list > li .img_wrap {
     padding-top: 240px;
@@ -236,8 +237,8 @@ nav > ul > li.btn_portfolio > a > span {
     width: 100%;
 }
 #portfolio ul.thumbnail_list > li .txt_wrap {
-    padding: 20px; 
-    height: 140px;
+    padding: 10px; 
+    height: 60px;
 }
 #portfolio ul.thumbnail_list > li .txt_wrap i{
     float : right;
@@ -272,6 +273,7 @@ nav > ul > li.btn_portfolio > a > span {
     font-size: 0.9rem;
     color: #57aba2;
     float: right;
+    line-height : 32px;
 }
 #projects .content .summary{
     font-size: 1rem;
@@ -435,7 +437,8 @@ nav > ul > li.btn_portfolio > a > span {
 
     #portfolio ul.thumbnail_list {display: block;}
     #portfolio ul.thumbnail_list > li{display : inline-block; width:47% ;border: 1px solid black; margin: 1% 1%;}
-    #portfolio ul.thumbnail_list > li .card_wrap{background-color: white; height: 380px;}
+    #portfolio ul.thumbnail_list > li .card_wrap{background-color: white; height: 300px;}
+    
 }
 
 @media screen and (max-width: 600px) {
