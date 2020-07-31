@@ -23,19 +23,11 @@
     
         $(".btn_menu_mobile").click(function(){
             $("nav").addClass("on");
-
-            //TODO: 필터 새로 만들기
-            //$(".container").addClass("filter");
-           // $(".title").addClass("filter");
             $(".filter").addClass("on");
 
-            $(".filter").click(function(){ // $(".container").click(function(){
+            $(".filter").click(function(){ 
                 $("nav").removeClass("on");
                 $(".filter").removeClass("on");
-
-                // $(".container").removeClass("filter");
-                // $(".title").removeClass("filter");
-
             });
         });
 
@@ -43,7 +35,7 @@
             console.log($(this));
             console.log("btn");
             e.preventDefault();
-            var href = $(this).children('a').attr('href');            //자식위치가져오기
+            var href = $(this).children('a').attr('href');
             var offset  = $(href).offset().top;
             if (href == '#home')  offset = 0;
             $( 'html, body' ).animate( { scrollTop : offset }, 400 );
@@ -56,7 +48,6 @@
         
         $(".close").click(function(){
             $(this).parent('.slide_detail').removeClass('on');
-
         });
 
         $(".btn_rnd").mouseenter(function(){
@@ -72,13 +63,13 @@
         {
             var result = false;
             var docViewTop = $(window).scrollTop(); //현재스크롤위치
-            var docViewBottom = docViewTop + $(window).height(); //+ 브라우저에서보여지는높이 //1528
+            var docViewBottom = docViewTop + $(window).height(); //+ 브라우저에서보여지는높이
 
-            var elemTop = $(elem).offset().top; //elm의 좌표값의 top 588    
-            var elemBottom = elemTop + $(elem).height(); //elm의 top에 elm의 높이더하면 elm의 bottom 1458
+            var elemTop = $(elem).offset().top; //elm의 좌표값의 top 
+            var elemBottom = elemTop + $(elem).height(); //elm의 top에 elm의 높이더하면 elm의 bottom
 
-            if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)){ //elm이 화면안에 있는지 쳌 588 > 600
-            console.log("elemBottom = "+elemBottom+",<= docViewBottom = "+docViewBottom +", elemTop : "+elemTop+">= docViewTop : "+docViewTop);
+            if ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)){ //elm이 화면안에 있는지 쳌
+            // console.log("elemBottom = "+elemBottom+",<= docViewBottom = "+docViewBottom +", elemTop : "+elemTop+">= docViewTop : "+docViewTop);
                 result =  true;
             }
             return result;
@@ -119,7 +110,7 @@
     <header>
         <div class="title">
             <a href="#home" id ="home" class="home btn" >
-                <h1>HEO YOONJEONG1</h1>
+                <h1>HEO YOONJEONG</h1>
                 <span>JUST A DEVELOPER</span>
             </a>
 
@@ -148,11 +139,6 @@
         <!-- <section id="about">
             <h2 class="section_title">About</h2>
             <div class="text_area">
-            <h3>Mission-driven full stack developer with a passion for thoughtful UI design, collaboration, and teaching.</h3>
-            <p>I’ve always sought out opportunities and challenges that are meaningful to me. Although my professional path has taken many twists and turns — from touring and recording artist, to employee of the year at a non-profit, to dean's scholar at UPenn, to small business owner and entrepreneur — I've never stopped engaging my passion to help others and solve problems.</p>
-
-            <p>As a web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at a high growth company.</p>
-                
             </div>
         </section> -->
         <section id="portfolio">
@@ -166,7 +152,6 @@
                                 </div>
                                 <div class="txt_wrap">
                                     <span class="title">카카오뱅크<i class="fas fa-ellipsis-h"></i> </span>
-                                    <!-- <p>HTML5, CSS3, JAVASCRIPT 를 이용하여 구현한 카카오뱅크 Clone 사이트</p> -->
                                 </div>
                             </a>
                             <div class="slide_detail">
@@ -179,7 +164,7 @@
                                     <li>구현 화면 : 메인, 회사소개, 입출금대출</li>
                                 </ul>
                                 <div class="txt_wrap2">
-                                    <a href="http://192.168.2.68/private_repo/portfolio/newkakao/" target="_blank" class="btn_rnd"><i class="fas fa-external-link-alt fa-lg"></i></a>
+                                    <a href="/newkakao" target="_blank" class="btn_rnd"><i class="fas fa-external-link-alt fa-lg"></i></a>
                                     <a href="https://github.com/heoyoonjeong87/private_repo/tree/master/portfolio/newkakao" target="_blank" class="btn_rnd"><i class="fab fa-github fa-lg"></i></a>
                                 </div>
                             </div>
@@ -192,7 +177,6 @@
                                 </div>
                                 <div class="txt_wrap">
                                     <span class="title">Microsoft<i class="fas fa-ellipsis-h"></i></span>
-                                    <!-- <p>HTML5, CSS3, JAVASCRIPT 를 이용하여 구현한 MicroSoft Clone 사이트</p> -->
                                 </div>
                             </a>
                             <div class="slide_detail">
@@ -205,7 +189,7 @@
                                     <li>구현 화면 : 메인, Microsoft365</li>
                                 </ul>
                                 <div class="txt_wrap2">
-                                    <a href="http://192.168.2.68/private_repo/portfolio/eyescream/" target="_blank" class="btn_rnd"><i class="fas fa-external-link-alt fa-lg"></i></a>
+                                    <a href="/eyescream" target="_blank" class="btn_rnd"><i class="fas fa-external-link-alt fa-lg"></i></a>
                                     <a href="https://github.com/heoyoonjeong87/private_repo/tree/master/portfolio/eyescream" target="_blank" class="btn_rnd"><i class="fab fa-github fa-lg"></i></a>
                                 </div>
                             </div>
@@ -218,7 +202,6 @@
                                 </div>
                                 <div class="txt_wrap">
                                     <span class="title">EYESCREAM<i class="fas fa-ellipsis-h"></i></span>
-                                    <!-- <p>HTML5, CSS3, JAVASCRIPT 를 이용하여 구현한 EYESCREAM Clone 사이트</p> -->
                                 </div>
                             </a>
                             <div class="slide_detail">
@@ -231,7 +214,7 @@
                                     <li>구현 화면 : 메인</li>
                                 </ul>
                                 <div class="txt_wrap2">
-                                    <a href="http://192.168.2.68/private_repo/portfolio/ms/" target="_blank" class="btn_rnd"><i class="fas fa-external-link-alt fa-lg"></i></a>
+                                    <a href="/ms" target="_blank" class="btn_rnd"><i class="fas fa-external-link-alt fa-lg"></i></a>
                                     <a href="https://github.com/heoyoonjeong87/private_repo/tree/master/portfolio/ms" target="_blank" class="btn_rnd"><i class="fab fa-github fa-lg"></i></a>
                                 </div>
                             </div>
