@@ -32,12 +32,16 @@
         });
 
         $(".btn").click(function(e){
-            console.log($(this));
-            console.log("btn");
             e.preventDefault();
-            var href = $(this).children('a').attr('href');
-            var offset  = $(href).offset().top;
-            if (href == '#home')  offset = 0;
+            var offset;
+
+            if ( $(this).attr('href') == '#home'){
+                offset = 0;
+            } else {
+                var href = $(this).children('a').attr('href');
+                offset  = $(href).offset().top;
+            }
+
             $( 'html, body' ).animate( { scrollTop : offset }, 400 );
             return false;
         });
