@@ -269,12 +269,12 @@ nav > ul > li.btn_portfolio > a > span {
     color: lightslategray;
     display: inline;
 }
-#projects .content .title > .date{
+/* #projects .content .title > .date{
     font-size: 0.9rem;
     color: #57aba2;
     float: right;
     line-height : 32px;
-}
+} */
 #projects .content .summary{
     font-size: 1rem;
     padding: 20px 0;
@@ -294,6 +294,12 @@ nav > ul > li.btn_portfolio > a > span {
     list-style : disc !important;
 }
 
+#projects .content > .date {
+    text-align: right;
+    padding: 10px 20px;
+    background-color: #fafafa;
+    font-size: 0.8rem;
+}
 #skills .content{
     background-color: #fff;
     box-shadow: 0 2px 3px 1px grey;
